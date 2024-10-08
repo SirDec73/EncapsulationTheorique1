@@ -13,6 +13,7 @@ void Entity::SetPositionX(float _x) {
 
 void Entity::SetPositionY(float _y) {
 	Vect.SetPositionY(_y);
+
 }
 
 float Entity::GetPositionX() {
