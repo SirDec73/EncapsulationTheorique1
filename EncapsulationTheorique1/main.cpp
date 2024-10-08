@@ -1,39 +1,40 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "point.h"
+#include "Vector2.h"
+#include "Entity.h"
 
 int main(int argc, const char* argv[]) {
 	
-	Point point;
+	//Exercice 1
+	/*Vector2 Vect;
 
-	point.SetValue();
-	std::string pointPosition = point.ToString();
+	std::cout << Vect.GetPositionX() << " ";
+	std::cout << Vect.GetPositionY() << std::endl;
 
-	std::cout << pointPosition << std::endl;
+	Vect.SetPositionX(1f);
+	Vect.SetPositionY(2f);
 
-	/*std::cout << "Hello World !" << std::endl;
+	std::cout << Vect.GetPositionX() << " ";
+	std::cout << Vect.GetPositionY() << std::endl;*/
+	
 
-	int nb;
-	std::vector<int> iArray;
-
-
-	for (int i = 0; i < 3; i++) {
-
-		std::cout << "Choose a number" << std::endl;
-		std::cin >> nb;
-
-		iArray.push_back(nb);
-
-		std::cout << "Your vector" << std::endl;
-
-		for (int j = 0; j < iArray.size(); j++) {
-			std::cout << iArray[j] << std::endl;
-		}
-	}*/
+	//Exercice 2
+	Entity entity(12.f,-3.f);
+	std::cout << entity.GetPositionX() << " ";
+	std::cout << entity.GetPositionY() << std::endl;
 
 
+	entity.SetPositionX(5.5);
+	entity.SetPositionY(2.3);
+
+	std::cout << entity.GetPositionX() << " ";
+	std::cout << entity.GetPositionY() << std::endl;
 
 	return 0;
-
 }
+
+
+//std::stringstream sStream;
+//sStream << "Point position (x : " << x << ", y : " << y << " )";
+//std::cout << sStream.str() << std::endl;

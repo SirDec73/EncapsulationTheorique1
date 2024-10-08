@@ -3,11 +3,16 @@
 #include <string>
 #include <sstream>
 
+Point::Point() {
+
+}
+
 void Point::SetValue() {
 	std::cin >> x;
 	std::cin >> y;
 	std::cin >> z;
 }
+
 std::string Point::ToString() {
 	// Version Prof
 	/*std::stringstream sStream;

@@ -13,18 +13,57 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers sources\Theorique_1">
+      <UniqueIdentifier>{5f295080-be1b-4e5c-9cf1-1d9d9876873a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Theorique_1">
+      <UniqueIdentifier>{1cbd20f8-bf53-433d-ba14-db92cae3391e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Exercice">
+      <UniqueIdentifier>{ded4a71b-a4e5-4871-a5f0-3b9c4b3f8e31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Exercice">
+      <UniqueIdentifier>{75e1bb53-3247-46e5-b514-0a22abc5fd10}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="point.cpp">
+      <Filter>Fichiers sources\Theorique_1</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="point.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="Vector2.h">
+      <Filter>Fichiers d%27en-tête\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertor2.cpp">
+      <Filter>Fichiers sources\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Fichiers sources\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.h">
+      <Filter>Fichiers d%27en-tête\Exercice</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\point\point\Player.cpp">
+      <Filter>Fichiers sources\Theorique_1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\point\point\Point.cpp">
+      <Filter>Fichiers sources\Theorique_1</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="point.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Theorique_1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\point\point\IAlive.h">
+      <Filter>Fichiers d%27en-tête\Theorique_1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\point\point\Player.h">
+      <Filter>Fichiers d%27en-tête\Theorique_1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\point\point\Point.h">
+      <Filter>Fichiers d%27en-tête\Theorique_1</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
