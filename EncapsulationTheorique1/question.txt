@@ -8,3 +8,5 @@ Player.cpp --> Constructeur --> on ne Set pas la vitesse ?
 TODO :
 
 MOB::Move(){}
+PLAYER::Move(){}
+PLAYER::ATTACK doesn't work

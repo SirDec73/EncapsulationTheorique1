@@ -1,8 +1,8 @@
 #ifndef ALIVE_H__
 #define ALIVE_H__
 
-class Alive
-{
+
+class Alive{
 protected:
 	float maxHP;
 	float actualHP;

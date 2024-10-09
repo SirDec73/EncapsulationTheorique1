@@ -4,7 +4,7 @@
 #include "AMovable.h"
 #include "IAttacker.h"
 
-class Player : public Entity, Alive, AMovable, IAttacker {
+class Player : public Entity, public Alive, AMovable, IAttacker {
 public:
 	Player(float,float,float,float,float);
 	void TakeDamage(float) override;

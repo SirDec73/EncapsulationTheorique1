@@ -3,7 +3,7 @@
 #include "Alive.h"
 #include "AMovable.h"
 
-class Mob : public Entity,Alive,AMovable{
+class Mob : public Entity, public Alive,AMovable{
 public:
 	Mob(float,float,float,float,float);
 	void TakeDamage(float) override;

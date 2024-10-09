@@ -43,11 +43,12 @@ int main(int argc, const char* argv[]) {
 	StaticObject st(0.f, 0.f);
 
 
-	/*Player* player = new Player(0.f, 0.f, 50.f, 0.f, 0.f);
+	Player* player = new Player(0.f, 0.f, 50.f, 0.f, 0.f);
 	Mob* mob = new Mob(3.f, 3.f, 50.f, 5.f, 5.f);
 
-	player->Attack(mob, 10.f);
-	player->GetMaxHP();*/
+	player->TakeDamage(10.f);
+	std::cout << "HP left = " << player->GetActualHP();
+	player->GetMaxHP();
 	
 }
 
