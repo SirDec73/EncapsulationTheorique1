@@ -1,7 +1,7 @@
 #include "Mob.h"
 #include "iostream"
 
-Mob::Mob(float _x, float _y, float _hp, float _directionX, float _directionY) {
+Mob::Mob(float _x, float _y, float _hp, float _directionX, float _directionY):Alive(),AMovable() {
 	vect.SetPositionX(_x);
 	vect.SetPositionY(_y);
 	maxHP = _hp;
@@ -19,7 +19,7 @@ Mob::Mob(float _x, float _y, float _hp, float _directionX, float _directionY) {
 
 void Mob::TakeDamage(float damage) {
 	actualHP -= damage;
-	std::cout << "Mob just taked damage";
+	std::cout << "Mob just taked damage" << std::endl;
 }
 
 void Mob::Move() {
