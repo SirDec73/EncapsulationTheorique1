@@ -6,8 +6,8 @@
 
 class Player : public Entity, public Alive, AMovable, IAttacker {
 public:
-	Player(float,float,float,float,float);
+	Player(float x, float y, float hp, float dir_X, float dir_Y, float speed);
 	void TakeDamage(float) override;
-	void Move()	override;
+	void Move(Entity&)	override;
 	void Attack(Alive&, float) override;
 };

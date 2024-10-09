@@ -140,6 +140,8 @@
     <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="Vector2.h" />
     <ClCompile Include="Vertor2.cpp" />
+    <ClCompile Include="World.cpp" />
+    <ClCompile Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AMovable.h" />

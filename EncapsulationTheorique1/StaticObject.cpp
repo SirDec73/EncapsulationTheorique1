@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Entity.h"
 
-StaticObject::StaticObject(float _x, float _y) {
+StaticObject::StaticObject(float _x, float _y) :Entity() {
 
 	vect.SetPositionX(_x);
 	vect.SetPositionY(_y);

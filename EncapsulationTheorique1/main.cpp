@@ -8,6 +8,7 @@
 #include "Mob.h"
 #include "Player.h"
 #include "Integer.h"
+#include "World.h"
 
 int main(int argc, const char* argv[]) {
 	
@@ -54,17 +55,22 @@ int main(int argc, const char* argv[]) {
 
 	//Exercice 10
 
-	StaticObject st(0.f, 0.f);
+	/*StaticObject so(5.3f, 6.3f);
+	Player player(0.f, 0.f, 50.f, 0.f, 0.f,1.f);
+	Mob mob(2.f, 2.f, 50.f, 5.f, 0.f,1.f);
+
+	player.Attack(mob, 10);
+	player.TakeDamage(10);
+	mob.Move(so);*/
 
 
-	Player player(0.f, 0.f, 50.f, 0.f, 0.f);
-	Mob mob(3.f, 3.f, 50.f, 5.f, 5.f);
+	//Exercice 11
 
-	player.TakeDamage(10.f);
-	std::cout << "HP left = " << player.GetActualHP();
-	player.Attack(mob,10);
+	World TheWorld;
 
-	std::cout << mob.GetActualHP() << std::endl;
+	TheWorld.Init();
+	TheWorld.Step();
+
 	
 }
 

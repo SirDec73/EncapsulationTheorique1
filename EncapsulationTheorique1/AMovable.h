@@ -1,6 +1,7 @@
 #ifndef AMOVABLE_H__
 #define AMOVABLE_H__
 #include "Vector2.h"
+#include "Entity.h"
 
 class AMovable
 {
@@ -12,7 +13,7 @@ public:
 	AMovable();
 	virtual void SetDirection(float, float);
 	virtual void SetSpeed(float);
-	virtual void Move() = 0;
+	virtual void Move(Entity&) = 0;
 
 };
 

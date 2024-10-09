@@ -3,9 +3,9 @@
 #include "Alive.h"
 #include "AMovable.h"
 
-class Mob : public Entity, public Alive,AMovable{
+class Mob : public Entity, public Alive,public AMovable{
 public:
-	Mob(float,float,float,float,float);
+	Mob(float x,float y,float hp,float dir_X,float dir_Y,float speed);
 	void TakeDamage(float) override;
-	void Move() override;
+	void Move(Entity&) override;
 };

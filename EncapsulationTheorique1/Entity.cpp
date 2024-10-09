@@ -22,11 +22,9 @@ void Entity::SetPositionY(float _y) {
 }
 
 float Entity::GetPositionX() {
-	std::cout << "from Entity ";
 	return vect.GetPositionX();
 }
 
 float Entity::GetPositionY() {
-	std::cout << "from Entity ";
 	return vect.GetPositionY();
 }
