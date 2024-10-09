@@ -1,8 +1,12 @@
 #include <iostream>
-#include <vector>
 #include <string>
 #include "Vector2.h"
 #include "Entity.h"
+#include "Alive.h"
+#include "StaticObject.h"
+#include "BreakableObject.h"
+#include "Mob.h"
+#include "Player.h"
 
 int main(int argc, const char* argv[]) {
 	
@@ -20,7 +24,7 @@ int main(int argc, const char* argv[]) {
 	
 
 	//Exercice 2
-	Entity entity(12.f,-3.f);
+	/*Entity entity;
 	std::cout << entity.GetPositionX() << " ";
 	std::cout << entity.GetPositionY() << std::endl;
 
@@ -31,7 +35,20 @@ int main(int argc, const char* argv[]) {
 	std::cout << entity.GetPositionX() << " ";
 	std::cout << entity.GetPositionY() << std::endl;
 
-	return 0;
+	return 0;*/
+
+
+	//Exercice 10
+
+	StaticObject st(0.f, 0.f);
+
+
+	/*Player* player = new Player(0.f, 0.f, 50.f, 0.f, 0.f);
+	Mob* mob = new Mob(3.f, 3.f, 50.f, 5.f, 5.f);
+
+	player->Attack(mob, 10.f);
+	player->GetMaxHP();*/
+	
 }
 
 

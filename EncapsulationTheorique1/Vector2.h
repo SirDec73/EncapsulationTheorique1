@@ -6,7 +6,6 @@ class Vector2 {
 	float y;
 public :
 
-
 	Vector2();
 
 	void SetPositionX(float);

@@ -1,0 +1,10 @@
+QUESTION :
+
+Entity.h --> Constructeur --> Valeur en paramètres ou valeur par défaut ?
+Alive.h --> Constructeur --> Valeur en paramètres ou valeur par défaut ?
+Mob.cpp --> Constructeur --> on ne Set pas la vitesse ?
+Player.cpp --> Constructeur --> on ne Set pas la vitesse ?
+
+TODO :
+
+MOB::Move(){}

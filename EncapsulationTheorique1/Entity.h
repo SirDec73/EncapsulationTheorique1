@@ -3,11 +3,13 @@
 #include "Vector2.h"
 
 class Entity {
-	Vector2 Vect;
+protected:
+	Vector2 vect;
 
 public:
 
-	Entity(float, float);
+	Entity();
+	/*Entity(float, float);*/
 
 	virtual void SetPositionX(float);
 	virtual void SetPositionY(float);
