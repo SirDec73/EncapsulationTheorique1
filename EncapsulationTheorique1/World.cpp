@@ -28,7 +28,7 @@ void World::Step() {
 
 	for (int i = 0; i < vEntity.size(); i++) {
 		if (dynamic_cast<Mob*>(vEntity[i]) != nullptr) {
-			vEntity[i].Move();
+
 		}
 	}
 
