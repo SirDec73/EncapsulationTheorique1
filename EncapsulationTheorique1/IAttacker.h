@@ -4,7 +4,7 @@
 
 class IAttacker {
 
-	virtual void Attack(Alive&,float) = 0;
+	virtual void Attack(Alive*,float) = 0;
 };
 
 #endif // !IATTACKER_H__

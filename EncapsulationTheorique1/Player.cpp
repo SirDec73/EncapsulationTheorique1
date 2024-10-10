@@ -31,7 +31,12 @@ void Player::Move(Entity& target) {
 
 	SetDirection(targetX - vect.GetPositionX(), targetY - vect.GetPositionY());
 
-	float k = speed / (direction.GetPositionX() + direction.GetPositionY());
+	if (direction.GetPositionX() + direction.GetPositionY() == 0) {
+		std::cout << "Player don't have to move : x = " << vect.GetPositionX() << " and y = " << vect.GetPositionY() << std::endl;
+		return;
+	}
+
+	float k = abs(speed / (direction.GetPositionX() + direction.GetPositionY()));
 
 	SetPositionX(vect.GetPositionX() + k * direction.GetPositionX());
 	SetPositionY(vect.GetPositionY() + k * direction.GetPositionY());
@@ -39,7 +44,7 @@ void Player::Move(Entity& target) {
 	std::cout << "Player move to x = " << GetPositionX() << " and y = " << GetPositionY() << std::endl;
 }
 
-void Player::Attack(Alive& target,float damage) {
-	std::cout << "Player just attacked";
-	target.TakeDamage(damage);
+void Player::Attack(Alive* target,float damage) {
+	std::cout << "Player just attacked" << std::endl;
+	target->TakeDamage(damage);
 }

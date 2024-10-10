@@ -6,10 +6,15 @@
 
 class World {
 	std::vector<Entity*> vEntity;
+	bool existingMob;
 public:
 	World();
 	void Init();
 	void Step();
+	void ExistingMob();
+	bool CheckEnd();
+	void EraseDead();
+	float GetDistanceBetween(Entity*, Entity*);
 };
 
 #endif // !WORLD_H__

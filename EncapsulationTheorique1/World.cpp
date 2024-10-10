@@ -5,9 +5,44 @@
 #include "Mob.h"
 #include "Player.h"
 #include "World.h"
+#include "Vector2.h"
 
-World::World() {
+World::World():existingMob(false) {
 
+}
+
+void World::ExistingMob() {
+	existingMob = false;
+	for (Entity* e : vEntity) {
+		if (dynamic_cast<Mob*>(e)) {
+			existingMob = true;
+			return;
+		}
+	}
+}
+
+void World::EraseDead() {
+	for (int i = 0; i < vEntity.size(); i++) {
+		if (dynamic_cast<Alive*>(vEntity[i]) != nullptr) {
+			if (dynamic_cast<Alive*>(vEntity[i])->GetActualHP() <= 0){
+				vEntity.erase(vEntity.begin()+i);
+			}
+		}
+	}
+}
+
+bool World::CheckEnd() {
+	for (Entity* e : vEntity) {
+		if (dynamic_cast<Alive*>(e) != nullptr) {
+			if (dynamic_cast<Player*>(e) == nullptr) {
+				if (dynamic_cast<Alive*>(e)->GetActualHP() > 0) {
+					return false;
+				}
+			}
+		}
+	}
+	std::cout << "Simulation Finished !";
+	return true;
 }
 
 void World::Init() {
@@ -21,15 +56,68 @@ void World::Init() {
 	vEntity.push_back(mob);
 	vEntity.push_back(player);
 
-	mob->Move(*player);
+	ExistingMob();
+}
+
+float World::GetDistanceBetween(Entity* e1, Entity* e2) {
+
+	float distanceX = e2->GetPositionX() - e1->GetPositionX();
+	float distanceY = e2->GetPositionY() - e1->GetPositionY();
+
+	float distance = sqrt(distanceX * distanceX + distanceY * distanceY);
+	return distance;
 }
 
 void World::Step() {
 
-	for (int i = 0; i < vEntity.size(); i++) {
-		if (dynamic_cast<Mob*>(vEntity[i]) != nullptr) {
+	std::cout << std::endl;
+	EraseDead();
+	ExistingMob();
 
+	for (Entity* e : vEntity) {
+
+		Mob* mob = dynamic_cast<Mob*>(e);
+		Player* player = dynamic_cast<Player*>(e);
+
+		if (mob) {
+			for (Entity* entity : vEntity) {
+				BreakableObject* breakableObject = dynamic_cast<BreakableObject*>(entity);
+				if (breakableObject) {
+					mob->Move(*breakableObject);
+				}
+				break;
+			}
 		}
+		
+		if (player) {
+
+			for (Entity* entity : vEntity) {
+				if (existingMob) {
+					Mob* targetMob = dynamic_cast<Mob*>(entity);
+					if (targetMob) {
+						player->Move(*targetMob);
+						float distanceBetween = GetDistanceBetween(player, targetMob);
+						if (abs(distanceBetween) >= -1) {
+							player->Attack(targetMob, 10);
+						}
+						break;
+					}
+				}
+				else {
+					BreakableObject* targetBreakableObject = dynamic_cast<BreakableObject*>(entity);
+					if (targetBreakableObject) {
+						player->Move(*targetBreakableObject);
+						float distanceBetween = GetDistanceBetween(player, targetBreakableObject);
+						if (abs(distanceBetween) >= 1) {
+							player->Attack(targetBreakableObject, 10);
+						}
+						break;
+					}
+				}
+			}
+		}
+
 	}
+	std::cout << std::endl;
 
 }

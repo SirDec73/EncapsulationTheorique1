@@ -20,7 +20,12 @@ Mob::Mob(float _x, float _y, float _hp, float _directionX, float _directionY,flo
 
 void Mob::TakeDamage(float damage) {
 	actualHP -= damage;
-	std::cout << "Mob just taked damage" << std::endl;
+	if (actualHP > 0) {
+		std::cout << "Mob just taked damage" << std::endl;
+	}
+	else {
+		std::cout << "Mob just died" << std::endl;
+	}
 }
 
 void Mob::Move(Entity& target) {
@@ -30,7 +35,12 @@ void Mob::Move(Entity& target) {
 
 	SetDirection(targetX - vect.GetPositionX(), targetY - vect.GetPositionY());
 
-	float k = speed / (direction.GetPositionX() + direction.GetPositionY());
+	if (direction.GetPositionX() + direction.GetPositionY() == 0) {
+		std::cout << "Mob don't have to move : x = " << vect.GetPositionX() << " and y = " << vect.GetPositionY() << std::endl;
+		return;
+	}
+
+	float k = abs(speed / (direction.GetPositionX() + direction.GetPositionY()));
 
 	SetPositionX(vect.GetPositionX() + k * direction.GetPositionX());
 	SetPositionY(vect.GetPositionY() + k * direction.GetPositionY());

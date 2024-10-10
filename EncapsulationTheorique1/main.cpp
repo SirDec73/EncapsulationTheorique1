@@ -69,9 +69,13 @@ int main(int argc, const char* argv[]) {
 	World TheWorld;
 
 	TheWorld.Init();
-	TheWorld.Step();
 
-	
+	do {
+		TheWorld.Step();
+	} while (!TheWorld.CheckEnd());
+
+	 
+	return 0;
 }
 
 
