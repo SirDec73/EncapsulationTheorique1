@@ -7,7 +7,7 @@
 #include "World.h"
 #include "Vector2.h"
 
-World::World():existingMob(false) {
+World::World() :existingMob(false) {
 
 }
 
@@ -24,8 +24,8 @@ void World::ExistingMob() {
 void World::EraseDead() {
 	for (int i = 0; i < vEntity.size(); i++) {
 		if (dynamic_cast<Alive*>(vEntity[i]) != nullptr) {
-			if (dynamic_cast<Alive*>(vEntity[i])->GetActualHP() <= 0){
-				vEntity.erase(vEntity.begin()+i);
+			if (dynamic_cast<Alive*>(vEntity[i])->GetActualHP() <= 0) {
+				vEntity.erase(vEntity.begin() + i);
 			}
 		}
 	}
@@ -84,11 +84,11 @@ void World::Step() {
 				BreakableObject* breakableObject = dynamic_cast<BreakableObject*>(entity);
 				if (breakableObject) {
 					mob->Move(*breakableObject);
+					break;
 				}
-				break;
 			}
 		}
-		
+
 		if (player) {
 
 			for (Entity* entity : vEntity) {
@@ -97,10 +97,11 @@ void World::Step() {
 					if (targetMob) {
 						player->Move(*targetMob);
 						float distanceBetween = GetDistanceBetween(player, targetMob);
-						if (abs(distanceBetween) >= -1) {
+						std::cout << distanceBetween << std::endl;
+						if (abs(distanceBetween) <= 1) {
 							player->Attack(targetMob, 10);
+							break;
 						}
-						break;
 					}
 				}
 				else {
@@ -108,10 +109,10 @@ void World::Step() {
 					if (targetBreakableObject) {
 						player->Move(*targetBreakableObject);
 						float distanceBetween = GetDistanceBetween(player, targetBreakableObject);
-						if (abs(distanceBetween) >= 1) {
+						if (abs(distanceBetween) <= 1) {
 							player->Attack(targetBreakableObject, 10);
+							break;
 						}
-						break;
 					}
 				}
 			}

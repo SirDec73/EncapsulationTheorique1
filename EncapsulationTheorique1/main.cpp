@@ -70,6 +70,9 @@ int main(int argc, const char* argv[]) {
 
 	TheWorld.Init();
 
+
+
+
 	do {
 		TheWorld.Step();
 	} while (!TheWorld.CheckEnd());
