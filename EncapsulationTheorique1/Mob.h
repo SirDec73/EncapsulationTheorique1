@@ -1,4 +1,7 @@
-#pragma once
+#ifndef MOB_H__
+#define MOB_H__
+
+
 #include "Entity.h"
 #include "Alive.h"
 #include "AMovable.h"
@@ -9,3 +12,5 @@ public:
 	void TakeDamage(float) override;
 	void Move(Entity&) override;
 };
+
+#endif // !*MOB_H__

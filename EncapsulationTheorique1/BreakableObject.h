@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BREAKABLEOBJECT_H__
+#define BREAKABLEOBJECT_H__
+
 #include "Entity.h"
 #include "Alive.h"
 
@@ -7,3 +9,5 @@ public:
 	BreakableObject(float, float, float);
 	void TakeDamage(float) override;
 };
+
+#endif // !BREAKABLEOBJECT_H__

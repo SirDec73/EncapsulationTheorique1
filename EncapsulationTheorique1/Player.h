@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PLAYER_H__
+#define PLAYER_H__
+
 #include "Entity.h"
 #include "Alive.h"
 #include "AMovable.h"
@@ -11,3 +13,5 @@ public:
 	void Move(Entity&)	override;
 	void Attack(Alive*, float) override;
 };
+
+#endif // !PLAYER_H__
